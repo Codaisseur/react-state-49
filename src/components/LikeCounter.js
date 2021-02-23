@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const LikeCounter = () => {
   const [numLikes, setNumLikes] = useState(0);
@@ -6,6 +6,10 @@ const LikeCounter = () => {
 
   // console.log("numLikes", numLikes);
   // console.log("setNumLikes", setNumLikes);
+
+  useEffect(() => {
+    console.log("im in the useEffect");
+  }, []); // dependency array.
 
   // Never reassign a state manually
   // numLikes = 3 // wrong!
@@ -21,7 +25,7 @@ const LikeCounter = () => {
     setOpened(!opened);
   };
 
-  console.log("counter state in component body", numLikes);
+  // console.log("counter state in component body", numLikes);
 
   // const buttonTitle = opened ? "Hide message" : "Show secret message";
 
